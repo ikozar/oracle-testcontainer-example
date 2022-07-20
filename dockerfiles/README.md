@@ -1,6 +1,7 @@
 # build oracle image with precooked DB
 
 We can use in tests oracle image with precooked DB instead of empty DB, it will allow
+
 Pro:
 * use DB with prepared data pack
 * reduce oracle testcontainer start time
