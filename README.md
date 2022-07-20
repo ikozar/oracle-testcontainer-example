@@ -3,10 +3,10 @@
 This is a demo project to show the easiest way to
 use testcontainers library with Spring Boot.
 
-It's not the best way and it's not the right way,
-it's just the easiest in my opinion.
+Oracle container is started by singleton class com.evilcorp.demo.StaticOracleContainer.
+It allows to use single oracle instance for all tests.
 
-Container is started by singleton class com.evilcorp.demo.StaticOracleContainer .
+Tests connects to Oracle container by `@ContextConfiguration(initializers = TestcontainersInitializer.class)`
 
-It is connected to Spiring by com.evilcorp.demo.TestcontainersInitializer
+An approach to prepare and use Oracle container with precooked DB see in `dockerfiles/README.md`
 
