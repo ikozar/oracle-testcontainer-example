@@ -1,0 +1,18 @@
+dependencies {
+    final testcontainersVersion = '1.17.3'
+    final ojdbc8Version = '19.3.0.0'
+    final liquibaseVersion = '4.5.0'
+    final h2databaseVersion = '1.4.200'
+    final commonsCollections4Version = '4.4'
+
+    implementation "org.springframework.boot:spring-boot-starter-data-jdbc"
+    implementation "org.liquibase:liquibase-core:${liquibaseVersion}"
+    implementation "com.oracle.ojdbc:ojdbc8:${ojdbc8Version}"
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "org.testcontainers:testcontainers:${testcontainersVersion}"
+    testImplementation "org.testcontainers:oracle-xe:${testcontainersVersion}"
+    testImplementation "com.h2database:h2:${h2databaseVersion}"
+    testImplementation "org.apache.commons:commons-collections4:${commonsCollections4Version}"
+}
+

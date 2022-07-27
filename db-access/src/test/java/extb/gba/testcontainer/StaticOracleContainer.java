@@ -1,12 +1,8 @@
-package com.evilcorp.demo;
+package extb.gba.testcontainer;
 
 import org.springframework.util.unit.DataSize;
 import org.testcontainers.containers.BindMode;
 import org.testcontainers.containers.OracleContainer;
-import org.testcontainers.utility.DockerImageName;
-
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class StaticOracleContainer {
     public static OracleContainer getContainer() {

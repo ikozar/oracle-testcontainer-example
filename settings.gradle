@@ -1,0 +1,3 @@
+rootProject.name = 'oracle-testcontainer-example'
+
+include 'db-access'

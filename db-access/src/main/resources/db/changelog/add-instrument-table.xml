@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="add-user-table" author="ikozar">
+        <createTable tableName="instrument_definition">
+            <column name="instrument_id" type="numeric(9)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="ric" type="varchar(255)" />
+            <column name="isin" type="varchar(255)" />
+            <column name="created_ts" type="timestamp" defaultValueComputed="current_timestamp">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

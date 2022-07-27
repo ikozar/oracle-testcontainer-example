@@ -1,0 +1,65 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'idea'
+}
+
+subprojects {
+    // everything in this block apply's to all sub-modules
+
+    group = 'extb.gba'
+    version = '1.0-SNAPSHOT'
+    sourceCompatibility = '14'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java-library'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencyManagement {
+        imports {
+            // Version of artifact from here is used in ALL SUB-MODULES! don't set version in sub-module build.gradle
+            // version from here'll populate to all sub-modules.
+            mavenBom("org.springframework.boot:spring-boot-dependencies:2.6.6")
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+/*
+repositories {
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+*/
+
+/*
+ext {
+    set('springBoot', "2.6.5")
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-data-jdbc:${springBoot}"
+    implementation 'org.liquibase:liquibase-core:4.5.0'
+    implementation 'com.oracle.ojdbc:ojdbc8:19.3.0.0'
+    implementation 'org.springframework:spring-core:5.3.17'
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBoot}"
+    testImplementation 'org.testcontainers:testcontainers:1.17.3'
+    testImplementation 'org.testcontainers:oracle-xe:1.17.3'
+    testImplementation 'com.h2database:h2:1.4.200'
+    testImplementation 'org.apache.commons:commons-collections4:4.4'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+*/
+
